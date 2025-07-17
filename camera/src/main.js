@@ -30,6 +30,7 @@ const tick = () => {
   const elapsedTime = clock.getElapsedTime()
   // console.log('first')
   mesh.rotation.y = elapsedTime
+  mesh.position.x = Math.sin(elapsedTime)
   renderer.render(scene, camera)
   window.requestAnimationFrame(tick)
 }
