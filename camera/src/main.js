@@ -31,6 +31,7 @@ const tick = () => {
   // console.log('first')
   mesh.rotation.y = elapsedTime
   mesh.position.x = Math.sin(elapsedTime)
+  mesh.position.y = Math.cos(elapsedTime)
   renderer.render(scene, camera)
   window.requestAnimationFrame(tick)
 }
