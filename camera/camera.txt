@@ -1,0 +1,13 @@
+perspective camera -> two more parameters
+array camera -> render screen from multiple cameras
+stereo camera -> parallax, vr 
+cubic camera -> 6 renders, surrounding , environment maps
+orthographic camera -> without perspective, same size of render whether far or closer
+
+built in controls
+deviceOrientationControls -> will see moving things while moving the device 
+flyControls -> 
+firtPersonControl ->
+pointerLooks ->
+orbitControls
+trackBallControl -? orbitControls jaisa hota hai bas koi vertical limit nhi hoti
