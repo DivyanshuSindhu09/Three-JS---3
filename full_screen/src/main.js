@@ -23,10 +23,39 @@ const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh)
 
 const sizes = {
-  width : 800,
-  height : 600
+  width : window.innerWidth,
+  height : window.innerHeight
 }
 
+// update sizes on resize
+window.addEventListener('resize',()=>{
+  sizes.width = window.innerWidth
+  sizes.height = window.innerHeight
+
+  // update camera
+  camera.aspect = sizes.width / sizes.height
+  camera.updateProjectionMatrix()
+
+  // update renderer
+  renderer.setSize(sizes.width, sizes.height)
+
+  // pixel ratio
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+
+})
+
+
+// full screen
+window.addEventListener( 'dblclick' , ()=>{
+  console.log("Double click kyu kr rha hai bkl")
+  if (!document.fullscreenElement) {
+    canvas.requestFullscreen()
+  } else {
+    document.exitFullscreen()
+  }
+})
+
+console.log(window.devicePixelRatio)
 const camera = new THREE.PerspectiveCamera(75, sizes.width/ sizes.height)
 camera.position.z = 3
 scene.add(camera)
